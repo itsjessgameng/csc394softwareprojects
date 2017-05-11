@@ -9,6 +9,7 @@
 #May 11,2017 @ arpan
 
 Steps for creating project virtual env on desktop
+
 1 . cd desktop
 
 2.  python3 -m venv csc394project_master (to use python 3)
