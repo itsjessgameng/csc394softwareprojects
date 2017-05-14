@@ -227,8 +227,27 @@
             <hr>
           </div>
 
+        <ul style = "list-style-type: none">
+        {% for obj in object_list %}
+          <li>
+            <a href='/detail/{{obj.id}}'>{{obj.is_course_id}}</a></br>
+          </li>
+          <li>
+            {{obj.is_course_name}}</br>
+          </li>
+          <li>
+            {{obj.is_pre_req}}</br>
+          </li>
+          <li>
+            {{obj.is_quarter_ava }}</br>
+          </li>
+          <li>
+            {{obj.id}}</br>
+          </li>
+          </br><br>
 
-          
+        {% endfor %}
+      </ul>
 
 
 
@@ -236,10 +255,6 @@
           </div>
         </div>
       </div>
-
-
-
-
 
 
     </div>
