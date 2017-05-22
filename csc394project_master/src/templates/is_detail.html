@@ -171,18 +171,14 @@
             <!-- <li class="active"><a href="#">Courses <span class="sr-only">(current)</span></a></li> -->
 
 
-            <li><a href="/list">Curriculum</a></li>
+            <!-- <li><a href="/list">Curriculum</a></li> -->
             
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Curriculum<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="/cslist">CS</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="/islist">IS</a></li>
               </ul>
             </li>
           </ul>
@@ -211,9 +207,6 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-
-
-
     <div class="container">
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -221,42 +214,25 @@
           <div class="panel-heading">
             <div class="row">
               <div align="center">
-                <a href="#" class="active" id="login-form-link">{{title}}</a>
+                <a class="active" id="login-form-link">{{title}}</a>
               </div>
             </div>
             <hr>
           </div>
 
-        <ul style = "list-style-type: none">
-        {% for obj in object_list %}
-          <li>
-            <a href='/detail/{{obj.id}}'>{{obj.is_course_id}}</a></br>
-          </li>
-          <li>
-            {{obj.is_course_name}}</br>
-          </li>
-          <li>
-            {{obj.is_pre_req}}</br>
-          </li>
-          <li>
-            {{obj.is_quarter_ava }}</br>
-          </li>
-          <li>
-            {{obj.id}}</br>
-          </li>
-          </br><br>
-
-        {% endfor %}
-      </ul>
-
-
+<ul>
+	{{instance.is_course_id}}</br>
+	{{instance.is_course_name}}</br>
+	{{instance.is_pre_req}}</br>
+	{{instance.is_quarter_ava }}</br>
+	{{instance.is_id}}</br>
+          
+</ul>
 
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 

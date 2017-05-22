@@ -6,10 +6,14 @@ class Course(models.Model):
     course_id = models.CharField(max_length=120)
     course_name = models.CharField(max_length=120)
     pre_req = models.CharField(max_length=120)
-    quarter_ava = models.CharField(max_length=120)
+    cs_cons = models.CharField(max_length=120)
 
 
-
+    fall = models.BooleanField()
+    winter = models.BooleanField()
+    spring = models.BooleanField()
+    summer = models.BooleanField()
+    online = models.BooleanField()
 
 
 

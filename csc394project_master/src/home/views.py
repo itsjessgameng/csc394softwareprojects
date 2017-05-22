@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from .models import Home 
 from django.contrib.contenttypes.models import ContentType
-
+# from home.algorithm import Simulation
+import json 
 # Create your views here.
 
 @login_required(login_url='/login/')
@@ -17,30 +18,11 @@ def home_(request):
 
 	}
 	return render(request, "profile.html", context)
-
-
-def home_list(request):
-	#return HttpResponse("<h1>Hello from list</h1>")
-	queryset = Home.objects.all()
-	context = {
-		"object_list": queryset,
-		"title" : "List"
-	}
-	return render(request, "index.html", context)
-
-
+@login_required(login_url='/login/')
 def home_create(request):
-	return HttpResponse("<h1>Hello from create</h1>")
-
-
-def home_detail(request, id):
-	#return HttpResponse("<h1>Hello from detail</h1>")
-	instance = get_object_or_404(Home, id=id)
-	context = {
-		"title" : instance.title,
-		"instance": instance
-	}
-	return render(request, "home_detail.html", context)
+	data = json.dumps(plan)
+	
+	return render(request, "base.html", {'plan':data}) 
 
 
 def home_update(request):

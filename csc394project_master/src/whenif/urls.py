@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
-from home.views import home_, home_create, home_list, home_detail, home_update, home_delete
+from home.views import home_, home_create, home_update, home_delete
 
 urlpatterns = [
 	#url(r'^login/$', auth_views.login, name='login'),

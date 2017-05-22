@@ -171,18 +171,14 @@
             <!-- <li class="active"><a href="#">Courses <span class="sr-only">(current)</span></a></li> -->
 
 
-            <li><a href="/list">Curriculum</a></li>
+            <!-- <li><a href="/list">Curriculum</a></li> -->
             
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Curriculum<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="/cslist">CS</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="/islist">IS</a></li>
               </ul>
             </li>
           </ul>
@@ -215,27 +211,82 @@
 
 
     <div class="container">
-      <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-login">
-          <div class="panel-heading">
-            <div class="row">
-              <div align="center">
-                <a href="#" class="active" id="login-form-link">{{title}}</a>
-              </div>
-            </div>
-            <hr>
-          </div>
+    <div class="row">
+    
+    <div id="header">
+      <center><h1>Please fill out the form.</h1><center>
+    </div>
 
+    <form class="form-horizontal">
+    <fieldset>
 
-          
-
-
-
-            </div>
-          </div>
-        </div>
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="where">Degree</label>
+      <div class="col-md-4">
+      <select id="where" name="where" class="form-control">
+        <option value="1">Choose One</option>
+        <option value="1">MIS CS</option>
+        <option value="2">MIS IS</option>
+      </select>
       </div>
+    </div>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="what">Concentration</label>
+      <div class="col-md-4">
+      <select id="what" name="what" class="form-control">
+        <option value="1">Choose One</option>
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="category">Entering Quarter</label>
+      <div class="col-md-4">
+      <select id="category" name="category" class="form-control">
+        <option value="1">Choose One</option>
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+      </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="category"># Of Courses Per Quarter</label>
+      <div class="col-md-4">
+      <select id="category" name="category" class="form-control">
+        <option value="1">Choose One</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="2">Three</option>
+      </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="category">Delivery Choice</label>
+      <div class="col-md-4">
+      <select id="category" name="category" class="form-control">
+        <option value="1">Choose One</option>
+        <option value="1">Online</option>
+        <option value="2">In Class</option>
+        <option value="2">Online & In Class</option>
+      </select>
+      </div>
+    </div>
+  
+      </fieldset>
+    </form>
+    
+    <center><button type="button" class="btn btn-secondary btn-lg">Submit</button></center>
+    
+    </div>
+  </div>
 
 
 
