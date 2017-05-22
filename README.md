@@ -1,8 +1,27 @@
 # csc394softwareprojects
 
 
+# May 22, 2017 @arpan
+1. Imported all the classes into database.
+2. Created class type field as well. 						
+      1	Introductory course						
+      2	Foundation Courses							
+      3	Advanced Courses							
+      4	Major Elective Courses							
+      5	Capstone	
+ 3. fixed minor bugs with html code. 
 
 
+
+# May 21, 2017 @arpan
+1. Created IS and CS database template
+2. fixed minor bugs and created forum for students. 
+3. Started to import the classes into database. 
+
+
+# May 14, 2017 @arpan
+1. fixed front end
+2. connected backend and frontend for login pages
 
 
 
