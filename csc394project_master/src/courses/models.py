@@ -7,6 +7,7 @@ class Course(models.Model):
     course_name = models.CharField(max_length=120)
     pre_req = models.CharField(max_length=120)
     cs_cons = models.CharField(max_length=120)
+    cs_class_type = models.CharField(max_length=120)
 
 
     fall = models.BooleanField()

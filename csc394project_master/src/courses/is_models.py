@@ -7,6 +7,7 @@ class IS_Course(models.Model):
     is_course_name = models.CharField(max_length=120)
     is_pre_req = models.CharField(max_length=120)
     is_cons = models.CharField(max_length=120)
+    is_class_type = models.CharField(max_length=120)
    
     fall = models.BooleanField()
     winter = models.BooleanField()
