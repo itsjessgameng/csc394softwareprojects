@@ -42,5 +42,5 @@ def logout_view(request):
 	title = "Logout"
 	logout(request)
 
-	return HttpResponseRedirect('/login/')
+	return HttpResponseRedirect('/login/?next=/home/')
 	
