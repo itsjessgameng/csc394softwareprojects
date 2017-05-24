@@ -242,7 +242,7 @@
     <br>
     <br> 
     
-        <h2>Courses</h2>
+    <h2>Standard Courses</h2>
           
         <table class="table table-bordered">
         <thead>
@@ -253,7 +253,7 @@
           <th>Concentration</th>
           <th>Class Type</th>
           <th>Fall</th>
-          <th>Sinter</th>
+          <th>Winter</th>
           <th>Spring</th>
           <th>Summer</th>
           <th>Online</th>
@@ -261,24 +261,527 @@
         </thead>
         <tbody>
         {% for obj in object_list %}
+      {% if "Standard" in obj.cs_cons %}
           <tr>
-          <td><a href='/csdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
           <td>{{obj.course_name}}</br></td>
           <td>{{obj.pre_req}}</br></td>
           <td>{{obj.cs_cons}}</br></td>
-          <td>{{obj.cs_class_type}}</br></td>
-          <td>{{obj.fall }}</br></td>
-          <td>{{obj.winter }}</br></td>
-          <td>{{obj.spring }}</br></td>
-          <td>{{obj.summer }}</br></td>
-          <td>{{obj.online }}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
           </tr>
+      {% endif %}
         {% endfor %}
         </tbody>
         </table>
+    
+    <h2>Software & Systems Development Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Software and Systems Development" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
+    <h2>Theory Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Theory" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
+    <h2>Data Science Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Data Science" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
+    <h2>Database Systems Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Database Systems" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
+    <h2>Artificial Intelligence Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Artificial Intelligence" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
+    <h2>Software Engineering Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Software Engineering" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
+    <h2>Multimedia Courses</h2>
+          
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th>Course ID</th>
+          <th>Course Name</th>
+          <th>Pre-req</th>
+          <th>Concentration</th>
+          <th>Class Type</th>
+          <th>Fall</th>
+          <th>Winter</th>
+          <th>Spring</th>
+          <th>Summer</th>
+          <th>Online</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+      {% if "Multimedia" in obj.cs_cons %}
+          <tr>
+          <td><a href='/isdetail/{{obj.id}}'>{{obj.course_id}}</a></br></td>
+          <td>{{obj.course_name}}</br></td>
+          <td>{{obj.pre_req}}</br></td>
+          <td>{{obj.cs_cons}}</br></td>
+      {% if obj.cs_class_type in "1" %}
+          <td>{{"Intro"}}</br></td>
+      {% elif obj.cs_class_type in "2" %}
+          <td>{{"Foundation"}}</br></td>
+      {% elif obj.cs_class_type in "3" %}
+          <td>{{"Advanced"}}</br></td>
+      {% elif obj.cs_class_type in "4" %}
+          <td>{{"Major Elective"}}</br></td>
+      {% else %}
+          <td>{{"Capstone"}}</br></td>
+      {% endif %}
+          {% if obj.fall is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.winter is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.spring is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.summer is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          {% if obj.online is True %}
+          <td>{{"✔"}}</br></td>
+      {% else %}
+      <td>{{"✖"}}</br></td>
+      {% endif %}
+          </tr>
+      {% endif %}
+        {% endfor %}
+        </tbody>
+        </table>
+    
       </div>
           </br><br>
       </ul>
+
 
     </div>
   </div>
