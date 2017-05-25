@@ -10,7 +10,7 @@ from django.contrib.contenttypes.models import ContentType
 
 def cs_course_list(request):
 	#return HttpResponse("<h1>Hello from list</h1>")
-	queryset =  Course.objects.all()
+	queryset = Course.objects.all()
 	context = {
 		"object_list": queryset,
 		"title" : "Courses"
@@ -31,7 +31,7 @@ def is_course_list(request):
 
 def cs_course_detail(request, id):
 	#return HttpResponse("<h1>Hello from detail</h1>")
-	instance = get_object_or_404(Course, id=id)
+	instance = get_object_or_404(cs_Course, id=id)
 	context = {
 		"title" : instance.course_name,
 		"instance": instance

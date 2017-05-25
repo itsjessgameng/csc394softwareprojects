@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 
-
+# this CS Model
 class Course(models.Model): 
     course_id = models.CharField(max_length=120)
     course_name = models.CharField(max_length=120)
