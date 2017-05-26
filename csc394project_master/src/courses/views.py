@@ -31,7 +31,7 @@ def is_course_list(request):
 
 def cs_course_detail(request, id):
 	#return HttpResponse("<h1>Hello from detail</h1>")
-	instance = get_object_or_404(cs_Course, id=id)
+	instance = get_object_or_404(Course, id=id)
 	context = {
 		"title" : instance.course_name,
 		"instance": instance

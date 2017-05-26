@@ -177,9 +177,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Curriculum<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/cslist">CS</a></li>
+                <li><a href="/cslist">Computer Science</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="/islist">IS</a></li>
+                <li><a href="/islist">Information System</a></li>
               </ul>
             </li>
           </ul>
@@ -222,14 +222,36 @@
           </div>
 
 <ul>
-	{{instance.course_id}}</br>
-  {{instance.course_name}}</br>
-  {{instance.pre_req}}</br>
-  {{instance.fall}}</br>
-  {{instance.winter}}</br>
-  {{instance.spring }}</br>
-  {{instance.online }}</br>
-  {{instance._id}}</br>
+  <p><b> Course ID:  <font color="blue">{{instance.course_id}}</p></font></b>
+
+  <p><b> Course Name:  <font color="blue"> {{instance.course_name}}</p></font>
+
+  <p><b> Course Prerequisite:  <font color="blue"> 
+  {{instance.pre_req}}</p></font></font>
+
+    <p><b> Concentration:  <font color="blue"> 
+  {{instance.cs_cons }}</p></font></font>
+
+
+  <p><b> Class Type:  <font color="blue"> 
+  {{instance.cs_class_type}}</p></font></font>
+
+
+  <p><b> Quarter Fall:  <font color="blue"> 
+  {{instance.fall}}</p></font>
+
+  <p><b> Quarter Winter:  <font color="blue"> 
+  {{instance.winter}}</p></font>
+
+  <p><b> Quarter Spring:  <font color="blue"> 
+  {{instance.spring}}</p></font>
+
+  <p><b> Quarter Summer:  <font color="blue"> 
+  {{instance.summer}}</p></font>
+  
+   <p><b> Online:  <font color="blue"> 
+  {{instance.online}}</p></font>
+
 
           
 </ul>
