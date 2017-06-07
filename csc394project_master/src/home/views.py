@@ -28,9 +28,12 @@ def home_(request):
 		summer = request.POST['summer?']
 		student_obj = Student(user = user, degree = degree, concentration = concentration, quarter = qua, numOfCourses = numOfCourses, summer = summer)
 		student_obj.save()
-		plan = Algorithm(user).run()
+		
 	elif request.method == "POST" and request.POST['action'] == "Submit":
-		print(bleh)
+		some_var = request.POST.getlist('checks[]')
+		plan = Algorithm(user, some_var).run()
+		print(plan)
+		return render(request, "algoOutput.html", {"plan" : plan})
 	elif request.method == "POST" and request.POST['action'] == "Change Info":
 		Student.objects.filter(user=user).delete()
 		return render(request, "profile.html", {"title" : "Profile"})

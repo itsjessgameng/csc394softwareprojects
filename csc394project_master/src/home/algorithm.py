@@ -7,10 +7,11 @@ class Algorithm():
 ############################################
 ############ INITIALIZATION ################
 ############################################
-	def __init__(self, user):
+	def __init__(self, user, majorelec):
 	
 		self.major = "" #The Major of the Student
 		self.conc = "" #The Concentration of the Major of the Student
+		self.majorelec = majorelec #List of Major Elective Passed To Algorithm
 		self.start = 0 #Starting Quarter (0 (Fall), 1 (Winter), 2 (Spring), 3 (Summer))
 		self.rate = 0 #How Many Classes the Student Wishes to Take
 		self.summer = "" #Does the Student Wish to take Summer Classes ("no", "yes")
@@ -116,7 +117,7 @@ class Algorithm():
 					if clazz == classs[0]:
 						course_needed.append(Course(classs[0], classs[1], classs[2]))
 						break
-		# print(course_needed)			
+					
 		return course_needed
 	
 ############################################
@@ -226,8 +227,8 @@ class Algorithm():
 			path.append(temp)
 			counter = counter + 1
 			current_season = (current_season + 1) % 4
-		print(path)	
-		return str(path)
+			
+		return path
 			
 ############################################
 ############ RUN METHOD  ###################
@@ -251,7 +252,7 @@ class Algorithm():
 			cscintro = [('CSC 400'), ('CSC 401'), ('CSC 402'), ('CSC 403'), ('CSC 406'), ('CSC 407')]
 			cscfoundation = [('CSC 421'), ('CSC 435'), ('CSC 447'), ('CSC 453'), ('SE 450')]
 			cscadvanced = []
-			cscmajorelec = []
+			cscmajorelec = self.majorelec
 	
 		#Setup for Information Systems
 		if(self.major == "Information Systems"):
@@ -259,27 +260,27 @@ class Algorithm():
 				isintro = []
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('CNS 440'),('IS 435'),('IS 485'),('IS 535'),('IS 560')]
-				ismajorelec = []
+				ismajorelec = self.majorelec
 			elif self.conc == "Business Intelligence":
 				isintro = [('IT 411'), ('IT 403')]
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('IS 574'),('CSC 423'),('IS 467'),('IS 549')]
-				ismajorelec = []
+				ismajorelec = self.majorelec
 			elif self.conc == "Database Administration":
 				isintro = [('IT 411')]
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('IS 549'),('CSC 454'),('CSC 452'),('CSC 554')]
-				ismajorelec = []
+				ismajorelec = self.majorelec
 			elif self.conc == "IT Enterprise Management":
 				isintro = []
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('ECT 424'),('IS 556'),('IS 570'),('IS 535')]
-				ismajorelec = []
+				ismajorelec = self.majorelec
 			else: #Standard Concentration
 				isintro = []
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = []
-				ismajorelec = []
+				ismajorelec = self.majorelec
 		i = 1
 
 		#While All Three Routes Haven't Been Done (1 = Longest Route, 2 = Shortest Route, 3 = Work Friendly Route)
@@ -297,7 +298,7 @@ class Algorithm():
 				elif(self.major == "Information Systems"):
 					course_needed = self.refill(isintro, isfoundation, isadvanced, ismajorelec, iscapstone)
 					elective = [('Elective1',['None'])]
-					
+			
 				self.paths.append(self.algorithm(course_needed, numcourses, elective, self.start, i))
 				i = i + 1
 			
@@ -312,6 +313,7 @@ class Algorithm():
 				elif self.major == "Information Systems":
 					course_needed = self.refill(isintro, isfoundation, isadvanced, ismajorelec, iscapstone)
 					elective = [('Elective1','None')]
+			
 				self.paths.append(self.algorithm(course_needed, self.rate, elective, self.start, i))
 				i = i + 1
 			
@@ -326,8 +328,8 @@ class Algorithm():
 				elif self.major == "Information Systems":
 					course_needed = self.refill(isintro, isfoundation, isadvanced, ismajorelec, iscapstone)
 					elective = [('Elective1','None')]
+		
 				self.paths.append(self.algorithm(course_needed, self.rate, elective, self.start, i))
 				i = i + 1
 		
 		return self.paths
-

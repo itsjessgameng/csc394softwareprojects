@@ -229,179 +229,356 @@
 	
 	{% if obj.degree in "Computer Science" %}
 	
-	{% if obj.concentration in "Standard Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-		<select name = "electives" id ="electives" class = "form-control">
-			<input type="checkbox" name="checks[]" value="1" />
-			<input type="checkbox" name="checks[]" value="2" />
-			<input type="checkbox" name="checks[]" value="3" />
-			<input type="checkbox" name="checks[]" value="4" />
-		</select>
+		{% if obj.concentration in "Standard Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Software & Systems Development Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
-			<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
-			<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
-			<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
-			<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
-			<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
-			<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
-			<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
-			<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
-			<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
-			<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+		
+		{% elif obj.concentration in "Software & Systems Development Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Theory Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-		<center><p><h5>There are currently no electives</h5></p></center>
-		<center><p><h5>offered for this concentration at this time.</h5></p></center>
+		
+		{% elif obj.concentration in "Theory Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Data Database Systems Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
-			<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
-			<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
-			<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+		
+		{% elif obj.concentration in "Data Database Systems Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Artificial Intelligence Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
-			<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
-			<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
-			<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
-			<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
-			<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+		
+		{% elif obj.concentration in "Artificial Intelligence Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Software Engineering Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-		<select name = "electives" id ="electives" class = "form-control">
-			<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
-			<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
-			<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
-			<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
-			<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
-			<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
-		</select>
+		
+		{% elif obj.concentration in "Software Engineering Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Multimedia Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-		<select name = "electives" id ="electives" class = "form-control">
-			<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
-			<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
-			<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
-			<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
-		</select>
+		
+		{% elif obj.concentration in "Multimedia Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Data Science Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
-			<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
-			<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
-			<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
-			<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
-			<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
-			<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
-			<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
-			<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
-			<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
-			<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+		
+		{% elif obj.concentration in "Data Science Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+				<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+				<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+				<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+				<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+				<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+				<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+				<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+				<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+				<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+				<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+				<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+				<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+				<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+				<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+				<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+				<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+				<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			</div>
 		</div>
-	</div>
+		
+		{% endif %}
 	
-	{% endif %}
+	{% elif obj.degree in "Information Systems" %}
 	
-	{% if obj.degree in "Information Services" %}
-	
-	{% if obj.concentration in "Business Analysis & Systems Analysis Concentration" %}
-	
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="ECT 424" />ECT 424 Enterprise Infrastructure<br>
-			<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
-			<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
-			<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
+		{% if obj.concentration in "Business Analysis & Systems Analysis Concentration" %}
+		
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="ECT 424" />ECT 424 Enterprise Infrastructure<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
+				<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Business Intelligence Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
-			<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
-			<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
-			<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+		
+		{% elif obj.concentration in "Business Intelligence Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
+				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Database Administration Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
-			<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
-			<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
-			<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+		
+		{% elif obj.concentration in "Database Administration Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
+				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "IT Enterprise Management Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
-			<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
-			<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
-			<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
-			<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
-			<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
-			<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
+		
+		{% elif obj.concentration in "IT Enterprise Management Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
+				<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
+				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+				<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
+			</div>
 		</div>
-	</div>
-	
-	{% elif obj.concentration in "Standard Concentration" %}
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Electives</label>
-		<div class = "col-md-4">
-			<input type="checkbox" name="checks[]" value="CSC 424" />BLEH<br>
+		
+		{% elif obj.concentration in "Standard Concentration" %}
+		<div class = "form-group">
+			<label class="col-md-4 control-label" for="what">Electives</label>
+			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="CSC 424" />BLEH<br>
+			</div>
 		</div>
-	</div>
+		
+		{% endif %}
 	
-	{% endif %}
-	
-	{% endif %}
 	
 	{% endif %}
 	
