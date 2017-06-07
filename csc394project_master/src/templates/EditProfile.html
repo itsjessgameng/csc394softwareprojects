@@ -1,0 +1,431 @@
+<!-- Run whenif Page -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Once Student login Page-->
+
+    <script type="text/javascript">
+      $(function() {
+
+      $('#login-form-link').click(function(e) {
+      $("#login-form").delay(100).fadeIn(100);
+      $("#register-form").fadeOut(100);
+      $('#register-form-link').removeClass('active');
+      $(this).addClass('active');
+      e.preventDefault();
+    });
+    $('#register-form-link').click(function(e) {
+      $("#register-form").delay(100).fadeIn(100);
+      $("#login-form").fadeOut(100);
+      $('#login-form-link').removeClass('active');
+      $(this).addClass('active');
+      e.preventDefault();
+    });
+
+  });
+    </script>
+
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+ 
+    <style> {
+    padding-top: 90px;
+    }
+    .panel-login {
+        border-color: #ccc;
+      -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    }
+    .panel-login>.panel-heading {
+      color: #00415d;
+      background-color: #fff;
+      border-color: #fff;
+      text-align:center;
+    }
+    .panel-login>.panel-heading a{
+      text-decoration: none;
+      color: #666;
+      font-weight: bold;
+      font-size: 15px;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+    }
+    .panel-login>.panel-heading a.active{
+      color: #029f5b;
+      font-size: 18px;
+    }
+    .panel-login>.panel-heading hr{
+      margin-top: 10px;
+      margin-bottom: 0px;
+      clear: both;
+      border: 0;
+      height: 1px;
+      background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+      background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+      background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+      background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    }
+    .panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+      height: 45px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+    }
+    .panel-login input:hover,
+    .panel-login input:focus {
+      outline:none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border-color: #ccc;
+    }
+    .btn-login {
+      background-color: #59B2E0;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+      height: auto;
+      font-weight: normal;
+      padding: 14px 0;
+      text-transform: uppercase;
+      border-color: #59B2E6;
+    }
+    .btn-login:hover,
+    .btn-login:focus {
+      color: #fff;
+      background-color: #53A3CD;
+      border-color: #53A3CD;
+    }
+    .forgot-password {
+      text-decoration: underline;
+      color: #888;
+    }
+    .forgot-password:hover,
+    .forgot-password:focus {
+      text-decoration: underline;
+      color: #666;
+    }
+
+    .btn-register {
+      background-color: #1CB94E;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+      height: auto;
+      font-weight: normal;
+      padding: 14px 0;
+      text-transform: uppercase;
+      border-color: #1CB94A;
+    }
+    .btn-register:hover,
+    .btn-register:focus {
+      color: #fff;
+      background-color: #1CA347;
+      border-color: #1CA347;
+    } 
+    </style>
+
+
+    <title>Student Login Page</title>
+
+  </head>
+
+  <!--Depaul Banner -->
+      <img src='https://quikpayasp.com/depaul/quikpay/etc/image/upload/DePaul%20banner_1280.jpg' height=" "100%" width="100%"class='img-responsive'/>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/home">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <!-- <li class="active"><a href="#">Courses <span class="sr-only">(current)</span></a></li> -->
+
+
+            <!-- <li><a href="/list">Curriculum</a></li> -->
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Curriculum<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/cslist">Computer Science</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/islist">Information System</a></li>
+              </ul>
+            </li>
+          </ul>
+<!-- remove search option
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+-->
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/home">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+                <li role="separator" class="divider"></li>
+                
+              </ul>
+            </li>
+          </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+    <div class="row">
+	
+	<center><img src='http://www.cdm.depaul.edu/Prospective%20Students/PublishingImages/YourCareer/logo-DePaul-CDM-01.jpg' class='img-responsive'/>
+	
+	<div id="header">
+      <center><h1>Select four electives based on your concentration.</h1><center>
+    </div>
+	<br>
+	<br>
+	<br>
+	
+	<form class="form-horizontal" action = "" method="POST">{% csrf_token %}
+	
+	
+	{% for obj in students %}
+	
+	{% if user.username in obj.user %}
+	
+	{% if obj.degree in "Computer Science" %}
+	
+	{% if obj.concentration in "Standard Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+		<select name = "electives" id ="electives" class = "form-control">
+			<input type="checkbox" name="checks[]" value="1" />
+			<input type="checkbox" name="checks[]" value="2" />
+			<input type="checkbox" name="checks[]" value="3" />
+			<input type="checkbox" name="checks[]" value="4" />
+		</select>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Software & Systems Development Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CSC 436" />CSC 436 Web Applications<br>
+			<input type="checkbox" name="checks[]" value="CSC 438" />CSC 438 Framework for Web Application Development<br>
+			<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+			<input type="checkbox" name="checks[]" value="CSC 472" />CSC 472 Mobile Application Development for Android<br>
+			<input type="checkbox" name="checks[]" value="CSC 552" />CSC 552 Concurrent Software Development<br>
+			<input type="checkbox" name="checks[]" value="CSC 595" />CSC 595 Topics in Computer Science<br>
+			<input type="checkbox" name="checks[]" value="CNS 450" />CNS 450 Digital Forensic Techniques<br>
+			<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+			<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+			<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+			<input type="checkbox" name="checks[]" value="TDC 478" />TDC 478 Information Storage and Management<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Theory Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+		<center><p><h5>There are currently no electives</h5></p></center>
+		<center><p><h5>offered for this concentration at this time.</h5></p></center>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Data Database Systems Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CSC 452" />CSC 452 Database Programming<br>
+			<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+			<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+			<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Artificial Intelligence Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+			<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+			<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+			<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+			<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Software Engineering Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+		<select name = "electives" id ="electives" class = "form-control">
+			<input type="checkbox" name="checks[]" value="SE 430" />SE 430 Object Oriented Modeling<br>
+			<input type="checkbox" name="checks[]" value="SE 452" />SE 452 Object-Oriented Enterprise Computing<br>
+			<input type="checkbox" name="checks[]" value="SE 459" />SE 459 Agile Software Development<br>
+			<input type="checkbox" name="checks[]" value="SE 475" />SE 475 Managing Globally Distributed Software Development<br>
+			<input type="checkbox" name="checks[]" value="SE 480" />SE 480 Software Architecture 1<br>
+			<input type="checkbox" name="checks[]" value="SE 491" />SE 491 Software Engineering Studio<br>
+		</select>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Multimedia Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+		<select name = "electives" id ="electives" class = "form-control">
+			<input type="checkbox" name="checks[]" value="CSC 461" />CSC 461 Optimized C++<br>
+			<input type="checkbox" name="checks[]" value="CSC 475" />CSC 475 Game Engine Programming 1<br>
+			<input type="checkbox" name="checks[]" value="CSC 476" />CSC 476 Artificial Intelligence for Computer Games<br>
+			<input type="checkbox" name="checks[]" value="HCI 440" />HCI 440 Introduction to User-Centered Design<br>
+		</select>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Data Science Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CSC 423" />CSC 423 Data Analysis and Regression<br>
+			<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+			<input type="checkbox" name="checks[]" value="CSC 425" />CSC 425 Time Series Analysis and Forecasting<br>
+			<input type="checkbox" name="checks[]" value="CSC 465" />CSC 465 Data Visualization<br>
+			<input type="checkbox" name="checks[]" value="CSC 478" />CSC 478 Programming Machine Learning Applications<br>
+			<input type="checkbox" name="checks[]" value="CSC 481" />CSC 481 Introduction to Image Processing<br>
+			<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+			<input type="checkbox" name="checks[]" value="CSC 529" />CSC 529 Advanced Data Mining<br>
+			<input type="checkbox" name="checks[]" value="CSC 555" />CSC 555 Mining Big Data<br>
+			<input type="checkbox" name="checks[]" value="CSC 578" />CSC 578 Neural Networks and Deep Learning<br>
+			<input type="checkbox" name="checks[]" value="IS 467" />IS 467 Fundamentals of Data Science<br>
+		</div>
+	</div>
+	
+	{% endif %}
+	
+	{% if obj.degree in "Information Services" %}
+	
+	{% if obj.concentration in "Business Analysis & Systems Analysis Concentration" %}
+	
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="ECT 424" />ECT 424 Enterprise Infrastructure<br>
+			<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
+			<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
+			<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Business Intelligence Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+			<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+			<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
+			<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Database Administration Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+			<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+			<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
+			<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "IT Enterprise Management Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+			<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
+			<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
+			<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+			<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
+			<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+			<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
+		</div>
+	</div>
+	
+	{% elif obj.concentration in "Standard Concentration" %}
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Electives</label>
+		<div class = "col-md-4">
+			<input type="checkbox" name="checks[]" value="CSC 424" />BLEH<br>
+		</div>
+	</div>
+	
+	{% endif %}
+	
+	{% endif %}
+	
+	{% endif %}
+	
+	{% endif %}
+    {% endfor %}
+	
+	<center><input type="submit" name = "action" value = "Submit"</center><br><br>
+	<center><input type="submit" name = "action" value = "Change Info"</center><br>
+	
+	</form>
+	</div>
+	</div>
+	
+	
+	
+	<!-- Footer -->
+	<div id="footer">
+		<center><h5>DePaul University</h5></center>
+		<center><h5>College of Computing and Digital Media </h5></center>
+		<h5><p><center> Address: 243 South Wabash Avenue, Chicago, IL-60604 | &#9742: 312-362-8381</center></p></h5>
+		<h5><p><center>Designed and built by Team 7 Copyright &copy; 2017-2018</center></p></h5>
+	</div>
+
+  </body>
+
+</html>
+	

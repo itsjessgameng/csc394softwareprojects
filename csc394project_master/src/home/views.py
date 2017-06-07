@@ -15,13 +15,12 @@ import json
 @login_required(login_url='/login/')
 def home_(request):
 	# return HttpResponse("<h1>Hello from home</h1>")
-	context = {
-		"title" : "Profile",
-		
-	}
+	queryset = Student.objects.all()
+	
 	plan = []
 	user = request.user.username
-	if request.method == "POST":
+	print(request.FILES)
+	if request.method == "POST" and request.POST['action'] == "Submit Info":
 		degree = request.POST['major']
 		concentration = request.POST['concentration']
 		qua = request.POST['quarter']
@@ -30,10 +29,36 @@ def home_(request):
 		student_obj = Student(user = user, degree = degree, concentration = concentration, quarter = qua, numOfCourses = numOfCourses, summer = summer)
 		student_obj.save()
 		plan = Algorithm(user).run()
+	elif request.method == "POST" and request.POST['action'] == "Submit":
+		print(bleh)
+	elif request.method == "POST" and request.POST['action'] == "Change Info":
+		Student.objects.filter(user=user).delete()
+		return render(request, "profile.html", {"title" : "Profile"})
+		
+	##elif counter > 0:
+	##	if request.POST['action'] == "Submit":
+	##		counter = 1
+	##	else:
+	##		counter = 0
+	##		Student.objects.filter(user).delete()
+	##		return render(request, "profile.html", context)
 	
+	context = {
+		"title" : "Profile",
+		"students" : queryset,
+		"plan" : plan,
+	}
 	
-
-	return render(request, "profile.html", {'plan':plan})
+	query = Student.objects.all().filter(user = user)
+	if(query.count() > 0):
+		queryUser = str(query[0])
+	else:
+		return render(request, "profile.html", context)
+	
+	if(queryUser == user):
+		return render(request, "EditProfile.html", context)
+	else:
+		return render(request, "profile.html", context)
 	
 @login_required(login_url='/login/')
 def home_create(request):
