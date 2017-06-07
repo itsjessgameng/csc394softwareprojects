@@ -218,85 +218,185 @@
       <center><h1>Please fill out the form.</h1><center>
     </div>
 
-    <form class="form-horizontal">
-    <fieldset>
+    <form class="form-horizontal" action = "" method="POST">{% csrf_token %}
 
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="where">Degree</label>
-      <div class="col-md-4">
-      <select id="where" name="where" class="form-control">
-        <option value="1">Choose One</option>
-        <option value="2">MIS CS</option>
-        <option value="2">MIS IS</option>
-      </select>
-      </div>
-    </div>
+	
+  <script type="text/javascript">
+    var created = 0;
+        
+    function displayAccordingly() {
 
-    <!-- Select Basic  User choice of cons-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="what">Concentration</label>
-      <div class="col-md-4">
-      <select id="what" name="what" class="form-control">
-        <option value="1">Choose One</option>
-        <option value="1">Computer Science Standard Concentration</option>
-        <option value="2">Computer Science Software & Systems Development Concentration</option>
-        <option value="3">Computer Science Theory  Concentration</option>
-        <option value="5">Computer Science Data Science Concentration</option>
-        <option value="6">Computer Science Data Database Systems Concentration</option>
-        <option value="7">Computer Science Artificial Intelligence Concentration</option>
-        <option value="8">Computer Science Software Engineering Concentration</option>
-        <option value="9">Computer Science Multimedia Concentration</option>
-        <option value="10">Information Systems Standard Concentration</option>
-        <option value="11">Information Systems Business Analysis & Systems Concentration</option>
-        <option value="12">Information Systems Business Intelligence Concentration</option>
-        <option value="13">Information Systems Database Administration Concentration</option>
-        <option value="14">Information Systems IT Enterprise Management Concentration</option>
+      if (created == 1) {
+                removeDrop();
+            }
+      
+            //Call mainMenu the main dropdown menu
+            var major = document.getElementById('major');
 
-      </select>
-      </div>
-    </div>
+            //Create the new dropdown menu
+            var whereToPut = document.getElementById('myDiv');
+            var newDropdown = document.createElement('select');
+            newDropdown.setAttribute('id',"concentration");
+      newDropdown.setAttribute('name', "concentration");
+            whereToPut.appendChild(newDropdown);
 
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="category">Entering Quarter</label>
-      <div class="col-md-4">
-      <select id="category" name="category" class="form-control">
-        <option value="1">Choose One</option>
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-      </select>
-      </div>
-    </div>
+            if (major.value == "Computer Science") { //The person chose fruit
+
+        var optionOne = document.createElement("option");
+                optionOne.text="Standard Concentration";
+                newDropdown.add(optionOne,newDropdown.options[null]);
+      
+                var optionTwo = document.createElement("option");
+                optionTwo.text="Software & Systems Development Concentration";
+                newDropdown.add(optionTwo,newDropdown.options[null]);
+        
+        var optionThree = document.createElement("option");
+                optionThree.text="Theory  Concentration";
+                newDropdown.add(optionThree,newDropdown.options[null]);
+        
+        var optionFour = document.createElement("option");
+                optionFour.text="Data Science Concentration";
+                newDropdown.add(optionFour,newDropdown.options[null]);
+        
+        var optionFive = document.createElement("option");
+                optionFive.text="Data Database Systems Concentration";
+                newDropdown.add(optionFive,newDropdown.options[null]);
+        
+        var optionSix = document.createElement("option");
+                optionSix.text="Artificial Intelligence Concentration";
+                newDropdown.add(optionSix,newDropdown.options[null]);
+
+        var optionSeven = document.createElement("option");
+                optionSeven.text="Software Engineering Concentration";
+                newDropdown.add(optionSeven,newDropdown.options[null]);
+
+        var optionEight = document.createElement("option");
+                optionEight.text="Multimedia Concentration";
+                newDropdown.add(optionEight,newDropdown.options[null]);
+
+
+            } else if (major.value == "Information Systems") { //The person chose vegetabes
+
+        var optionOne = document.createElement("option");
+                optionOne.text="Standard Concentration";
+                newDropdown.add(optionOne,newDropdown.options[null]);
+        
+                //Add an option called "Spinach"
+                var optionTwo = document.createElement("option");
+                optionTwo.text="Business Analysis & Systems Concentration";
+                newDropdown.add(optionTwo,newDropdown.options[null]);
+
+                //Add an option called "Zucchini"
+                var optionThree = document.createElement("option");
+                optionThree.text="Business Intelligence Concentration";
+                newDropdown.add(optionThree,newDropdown.options[null]);
+        
+        var optionFour = document.createElement("option");
+                optionFour.text="Database Administration Concentration";
+                newDropdown.add(optionFour,newDropdown.options[null]);
+        
+        var optionFive = document.createElement("option");
+                optionFive.text="IT Enterprise Management Concentration";
+                newDropdown.add(optionFive,newDropdown.options[null]);
+
+            }
+      
+      created = 1
+        }
     
-    <div class="form-group">
+     function removeDrop() {
+            var d = document.getElementById('myDiv');
+
+            var oldmenu = document.getElementById('concentration');
+
+            d.removeChild(oldmenu);
+        }
+    </script>
+	
+	 <!-- Select Basic -->
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Major</label>
+		<div class = "col-md-4">
+		<select name = "major" id ="major" class = "form-control" onchange = "displayAccordingly()">
+			<option value="">--</option>
+			<option value ="Computer Science">Computer Science</option>
+			<option value ="Information Systems">Information Systems</option>
+		</select>
+		</div>
+	</div>
+	
+	<div class = "form-group">
+		<label class="col-md-4 control-label" for="what">Concentration</label>
+		<div id = "myDiv" class ="col-md-4"></div>
+	</div>
+	
+	
+
+
+	
+	<div class="form-group">
+      <label class="col-md-4 control-label" for="what">Entering Quarter</label>
+      <div class="col-md-4">
+      <select name="quarter" class="form-control">
+        <option> </option>
+        <option value=0>Fall</option>
+        <option value=1>Winter</option>
+		<option value=2>Spring</option>
+		<option value=3>Summer</option>
+      </select>
+      </div>
+    </div>
+
+
+	
+	<div class="form-group">
       <label class="col-md-4 control-label" for="category"># Of Courses Per Quarter</label>
       <div class="col-md-4">
-      <select id="category" name="category" class="form-control">
-        <option value="1">Choose One</option>
+      <select name="numcourses" class="form-control">
+        <option> </option>
         <option value="1">One</option>
         <option value="2">Two</option>
-        <option value="2">Three</option>
+        <option value="3">Three</option>
       </select>
       </div>
     </div>
-    
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="category">Delivery Choice</label>
+
+
+	
+	<div class="form-group">
+      <label class="col-md-4 control-label" for="category">Include Summer Classes?</label>
       <div class="col-md-4">
-      <select id="category" name="category" class="form-control">
-        <option value="1">Choose One</option>
-        <option value="1">Online</option>
-        <option value="2">In Class</option>
-        <option value="2">Online & In Class</option>
+      <select name="summer?" class="form-control">
+        <option> </option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
       </select>
       </div>
     </div>
-  
-      </fieldset>
+	
+	<center><input type="submit" value = "Submit"</center>
     </form>
+<hr>
+<br><br>
+
+
+<!-- list of classes retuerned from Alg -->
     
-    <center><button type="button" class="btn btn-secondary btn-lg">Submit</button></center>
+    <div class="container">
+            {% for trm in plan %}
+                <div class="row">
+                 
+                    <!-- <p> Longest path <p> -->
+                     <p>{{ trm }}</p>
+                     
+                </div>
+                <hr>
+                <br><br>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
     
     </div>
   </div>
