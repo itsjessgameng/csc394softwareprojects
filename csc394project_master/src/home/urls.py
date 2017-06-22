@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 #home
 from .views import home_, home_create, home_update, home_delete
-from accounts.views import login_view, register_view, logout_view
+from accounts.views import login_view, register_view, logout_view, get_student_list, student_detail
 from courses.views import is_course_list, cs_course_list, cs_course_detail, is_course_detail
 urlpatterns = [
     
@@ -21,6 +21,9 @@ urlpatterns = [
     url(r'^register/', register_view, name='register'),
     url(r'^logout/', logout_view, name='logout'),
     #### crriculum
+	
+	url(r'^staffrun/', get_student_list),
+    url(r'^studentdetail/(?P<user>\w+)/$', student_detail, name='Studentdetail'),
     
     url(r'^islist/', is_course_list),
     url(r'^cslist/', cs_course_list),

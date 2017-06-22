@@ -214,191 +214,22 @@
     <!-- Image in the Center --> 
     <center><img src='http://www.cdm.depaul.edu/Prospective%20Students/PublishingImages/YourCareer/logo-DePaul-CDM-01.jpg' class='img-responsive'/>
     
+
+     <form class="form-horizontal" action = "" method="POST">{% csrf_token %}
+      {% if request.user.is_active and request.user.is_staff %}
+          <a href="/staffrun/" class="btn btn-default" >Find Students To Run Path</a>
+      {% else %}
     <div id="header">
       <center><h1>Please fill out the form.</h1><center>
     </div>
+        {% include "student_form.html" %}
+      {% endif %}
 
-    <form class="form-horizontal" action = "" method="POST">{% csrf_token %}
-
-	<script type="text/javascript">
-		var created = 0;
-        
-		function displayAccordingly() {
-
-			if (created == 1) {
-                removeDrop();
-            }
-			
-            //Call mainMenu the main dropdown menu
-            var major = document.getElementById('major');
-
-            //Create the new dropdown menu
-            var whereToPut = document.getElementById('myDiv');
-            var newDropdown = document.createElement('select');
-            newDropdown.setAttribute('id',"concentration");
-			newDropdown.setAttribute('name', "concentration");
-			newDropdown.setAttribute('class', "form-control");
-            whereToPut.appendChild(newDropdown);
-
-            if (major.value == "Computer Science") { //The person chose fruit
-
-				var optionOne = document.createElement("option");
-                optionOne.text="Standard Concentration";
-                newDropdown.add(optionOne,newDropdown.options[null]);
-			
-                var optionTwo = document.createElement("option");
-                optionTwo.text="Software & Systems Development Concentration";
-                newDropdown.add(optionTwo,newDropdown.options[null]);
-				
-				var optionThree = document.createElement("option");
-                optionThree.text="Theory Concentration";
-                newDropdown.add(optionThree,newDropdown.options[null]);
-				
-				var optionFour = document.createElement("option");
-                optionFour.text="Data Science Concentration";
-                newDropdown.add(optionFour,newDropdown.options[null]);
-				
-				var optionFive = document.createElement("option");
-                optionFive.text="Data Database Systems Concentration";
-                newDropdown.add(optionFive,newDropdown.options[null]);
-				
-				var optionSix = document.createElement("option");
-                optionSix.text="Artificial Intelligence Concentration";
-                newDropdown.add(optionSix,newDropdown.options[null]);
-
-				var optionSeven = document.createElement("option");
-                optionSeven.text="Software Engineering Concentration";
-                newDropdown.add(optionSeven,newDropdown.options[null]);
-
-				var optionEight = document.createElement("option");
-                optionEight.text="Multimedia Concentration";
-                newDropdown.add(optionEight,newDropdown.options[null]);
-
-
-            } else if (major.value == "Information Systems") { //The person chose vegetabes
-
-				var optionOne = document.createElement("option");
-                optionOne.text="Standard Concentration";
-                newDropdown.add(optionOne,newDropdown.options[null]);
-				
-                //Add an option called "Spinach"
-                var optionTwo = document.createElement("option");
-                optionTwo.text="Business Analysis & Systems Concentration";
-                newDropdown.add(optionTwo,newDropdown.options[null]);
-
-                //Add an option called "Zucchini"
-                var optionThree = document.createElement("option");
-                optionThree.text="Business Intelligence Concentration";
-                newDropdown.add(optionThree,newDropdown.options[null]);
-				
-				var optionFour = document.createElement("option");
-                optionFour.text="Database Administration Concentration";
-                newDropdown.add(optionFour,newDropdown.options[null]);
-				
-				var optionFive = document.createElement("option");
-                optionFive.text="IT Enterprise Management Concentration";
-                newDropdown.add(optionFive,newDropdown.options[null]);
-
-            }
-			
-			created = 1
-        }
-		
-		 function removeDrop() {
-            var d = document.getElementById('myDiv');
-
-            var oldmenu = document.getElementById('concentration');
-
-            d.removeChild(oldmenu);
-        }
-    </script>
-	
-	 <!-- Select Basic -->
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Major</label>
-		<div class = "col-md-4">
-		<select name = "major" id ="major" class = "form-control" onchange = "displayAccordingly()">
-			<option>--</option>
-			<option value ="Computer Science">Computer Science</option>
-			<option value ="Information Systems">Information Systems</option>
-		</select>
-		</div>
-	</div>
-	
-	<div class = "form-group">
-		<label class="col-md-4 control-label" for="what">Concentration</label>
-		<div id = "myDiv" class ="col-md-4"></div>
-	</div>
-	
-	<!-- <div class="form-group"> -->
-	<!-- <label class="col-md-4 control-label" for="what">Concentration</label> -->
-      <!-- <div class="col-md-4"> -->
-      <!-- <select name="concentration" class="form-control"> -->
-        <!-- <option> </option> -->
-		<!-- {% if major.value is "Computer Science" %} -->
-        <!-- <option value="Computer Science Standard Concentration">Computer Science Standard Concentration</option> -->
-        <!-- <option value="Computer Science Software & Systems Development Concentration">Computer Science Software & Systems Development Concentration</option> -->
-        <!-- <option value="Computer Science Theory  Concentration">Computer Science Theory  Concentration</option> -->
-        <!-- <option value="Computer Science Data Science Concentration">Computer Science Data Science Concentration</option> -->
-        <!-- <option value="Computer Science Data Database Systems Concentration">Computer Science Data Database Systems Concentration</option> -->
-        <!-- <option value="Computer Science Artificial Intelligence Concentration">Computer Science Artificial Intelligence Concentration</option> -->
-        <!-- <option value="Computer Science Software Engineering Concentration">Computer Science Software Engineering Concentration</option> -->
-        <!-- <option value="Computer Science Multimedia Concentration">Computer Science Multimedia Concentration</option> -->
-		<!-- {% else % } -->
-		<!-- <option value="Information Systems Standard Concentration">Information Systems Standard Concentration</option> -->
-        <!-- <option value="Information Systems Business Analysis & Systems Concentration">Information Systems Business Analysis & Systems Concentration</option> -->
-        <!-- <option value="Information Systems Business Intelligence Concentration">Information Systems Business Intelligence Concentration</option> -->
-        <!-- <option value="Information Systems Database Administration Concentration">Information Systems Database Administration Concentration</option> -->
-        <!-- <option value="Information Systems IT Enterprise Management Concentration">Information Systems IT Enterprise Management Concentration</option> -->
-		<!-- {% endif %} -->
-		
-      <!-- </select> -->
-      <!-- </div> -->
-	<!-- </div> -->
-	
-	<div class="form-group">
-      <label class="col-md-4 control-label" for="what">Entering Quarter</label>
-      <div class="col-md-4">
-      <select name="quarter" class="form-control">
-        <option value=0>Fall</option>
-        <option value=1>Winter</option>
-		<option value=2>Spring</option>
-		<option value=3>Summer</option>
-      </select>
-      </div>
-    </div>
-	
-	<div class="form-group">
-      <label class="col-md-4 control-label" for="category"># Of Courses Per Quarter</label>
-      <div class="col-md-4">
-      <select name="numcourses" class="form-control">
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      </div>
-    </div>
-	
-	<div class="form-group">
-      <label class="col-md-4 control-label" for="category">Include Summer Classes?</label>
-      <div class="col-md-4">
-      <select name="summer?" class="form-control">
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-      </div>
-    </div>
-	
-	<center><input type="submit" name = "action" value = "Submit Info"</center>
-    </form>
-    
-    
     
     </div>
   </div>
-  
-  <br>
-  <br>
+    </div>
+  </div>
    <!-- footer -->
 
   <div id="footer">

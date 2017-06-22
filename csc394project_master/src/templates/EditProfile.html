@@ -213,13 +213,6 @@
 	
 	<center><img src='http://www.cdm.depaul.edu/Prospective%20Students/PublishingImages/YourCareer/logo-DePaul-CDM-01.jpg' class='img-responsive'/>
 	
-	<div id="header">
-      <center><h1>Select four electives based on your concentration.</h1><center>
-    </div>
-	<br>
-	<br>
-	<br>
-	
 	<form class="form-horizontal" action = "" method="POST">{% csrf_token %}
 	
 	
@@ -228,6 +221,13 @@
 	{% if user.username in obj.user %}
 	
 	{% if obj.degree in "Computer Science" %}
+	
+	<div id="header">
+      <center><h1>Select six electives based on your concentration.</h1><center>
+    </div>
+	<br>
+	<br>
+	<br>
 	
 		{% if obj.concentration in "Standard Concentration" %}
 		<div class = "form-group">
@@ -521,6 +521,13 @@
 	
 	{% elif obj.degree in "Information Systems" %}
 	
+	<div id="header">
+      <center><h1>Select three electives based on your concentration.</h1><center>
+    </div>
+	<br>
+	<br>
+	<br>
+	
 		{% if obj.concentration in "Business Analysis & Systems Analysis Concentration" %}
 		
 		<div class = "form-group">
@@ -530,6 +537,15 @@
 				<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
 				<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
 				<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
+				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
+				<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
 			</div>
 		</div>
 		
@@ -537,10 +553,19 @@
 		<div class = "form-group">
 			<label class="col-md-4 control-label" for="what">Electives</label>
 			<div class = "col-md-4">
+				<input type="checkbox" name="checks[]" value="ECT 424" />ECT 424 Enterprise Infrastructure<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
+				<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
 				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
 				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
 				<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
 				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
+				<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
 			</div>
 		</div>
 		
@@ -548,10 +573,19 @@
 		<div class = "form-group">
 			<label class="col-md-4 control-label" for="what">Electives</label>
 			<div class = "col-md-4">
-				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
-				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="ECT 424" />ECT 424 Enterprise Infrastructure<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
+				<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
+				<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
 				<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
 				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
+				<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
 			</div>
 		</div>
 		
@@ -559,12 +593,18 @@
 		<div class = "form-group">
 			<label class="col-md-4 control-label" for="what">Electives</label>
 			<div class = "col-md-4">
-				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="ECT 424" />ECT 424 Enterprise Infrastructure<br>
+				<input type="checkbox" name="checks[]" value="HCI 440" />HCI Introduction to User-Centered Design<br>
 				<input type="checkbox" name="checks[]" value="IS 440" />IS 440 Collaborative Technologies for Leading Projects<br>
-				<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
-				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
-				<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 556" />IS 556 Enterprise Project Management<br>
+				<input type="checkbox" name="checks[]" value="CSC 424" />CSC 424 Advanced Data Analysis<br>
+				<input type="checkbox" name="checks[]" value="CSC 495" />CSC 495 Social Network Analysis<br>
+				<input type="checkbox" name="checks[]" value="IS 452" />IS 452 Big Data and the Internet of Things(IOT)<br>
 				<input type="checkbox" name="checks[]" value="IS 550" />IS 550 Enterprise Data Management<br>
+				<input type="checkbox" name="checks[]" value="IS 505" />IS 505 Business Continuity/Disaster Recovery Theories and Strategies<br>
+				<input type="checkbox" name="checks[]" value="CNS 440" />CNS 440 Information Security Management<br>
+				<input type="checkbox" name="checks[]" value="MGT 500" />MGT 500 Managing for Effective and Ethical Organizational Behavior<br>
+				<input type="checkbox" name="checks[]" value="IS 535" />IS 535 Information Technology Investment Financial Analysis<br>
 				<input type="checkbox" name="checks[]" value="IS 560" />IS 560 Enterprise Systems<br>
 			</div>
 		</div>

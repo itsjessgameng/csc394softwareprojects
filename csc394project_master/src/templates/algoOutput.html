@@ -212,9 +212,15 @@
 	
 	<center><img src='http://www.cdm.depaul.edu/Prospective%20Students/PublishingImages/YourCareer/logo-DePaul-CDM-01.jpg' class='img-responsive'/>
 	
+	<p><center>These are the paths</center></p>
+	
 	{% for obj in plan %}
 	
-	<p><center>This is the shortest path</center></p>
-	{{ obj }}
+	<div class = "form-group">
+			<div class = "col-md-4">
+				<center>{{ obj }}</center><br><br>
+			</div>
+		</div>
+		
 	
 	{% endfor %}

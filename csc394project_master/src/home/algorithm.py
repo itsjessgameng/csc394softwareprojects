@@ -1,5 +1,4 @@
 import sqlite3
-#from courses.models import Course
 from home.course import Course
 
 class Algorithm():
@@ -256,22 +255,22 @@ class Algorithm():
 	
 		#Setup for Information Systems
 		if(self.major == "Information Systems"):
-			if self.conc == "Business Analysis":
+			if self.conc == "Business Analysis Concentration":
 				isintro = []
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('CNS 440'),('IS 435'),('IS 485'),('IS 535'),('IS 560')]
 				ismajorelec = self.majorelec
-			elif self.conc == "Business Intelligence":
+			elif self.conc == "Business Intelligence Concentration":
 				isintro = [('IT 411'), ('IT 403')]
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('IS 574'),('CSC 423'),('IS 467'),('IS 549')]
 				ismajorelec = self.majorelec
-			elif self.conc == "Database Administration":
+			elif self.conc == "Database Administration Concentration":
 				isintro = [('IT 411')]
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('IS 549'),('CSC 454'),('CSC 452'),('CSC 554')]
 				ismajorelec = self.majorelec
-			elif self.conc == "IT Enterprise Management":
+			elif self.conc == "IT Enterprise Management Concentration":
 				isintro = []
 				isfoundation = [('IS 421'),('CSC 451'),('IS 422'),('IS 430')]
 				isadvanced = [('ECT 424'),('IS 556'),('IS 570'),('IS 535')]
